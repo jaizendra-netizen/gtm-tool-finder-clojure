@@ -1,0 +1,24 @@
+# gtm-tool-finder (Clojure)
+
+Search the [OneGTMLab](https://www.onegtmlab.dev) GTM tool directory from Clojure or your terminal:
+
+- API reviews for 66 sales and marketing tools: pricing, rate limits, keys and MCP support
+- 99 head-to-head tool comparisons, such as Apollo vs Clay
+- 110 plain-English definitions of GTM terms
+
+```clojure
+[net.clojars.onegtmlab/gtm-tool-finder "1.0.2"]
+```
+
+```clojure
+(require '[net.clojars.onegtmlab.gtm-tool-finder :as f])
+
+(doseq [e (f/search "enrichment" :kind "Tool" :limit 10)]
+  (println (:name e) (:url e)))
+```
+
+Command line: `clojure -M -m net.clojars.onegtmlab.gtm-tool-finder --kind Comparison clay`.
+
+Every result links to the full page on [onegtmlab.dev/tool-directory](https://www.onegtmlab.dev/tool-directory). The list ships inside the jar, so it works offline and sends no data anywhere.
+
+Also available as a [Python package](https://pypi.org/project/gtm-tool-finder/), a [Ruby gem](https://rubygems.org/gems/gtm-tool-finder), a [Java library](https://central.sonatype.com/artifact/io.github.jaizendra-netizen/gtm-tool-finder), an [Elixir package](https://hex.pm/packages/gtm_tool_finder) and a [Gleam package](https://hex.pm/packages/gtm_tool_directory). Built by [OneGTMLab](https://www.onegtmlab.dev), a GTM engineering agency. MIT licensed.
