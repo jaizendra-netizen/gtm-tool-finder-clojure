@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gtm-tool-finder (Clojure) | OneGTMLab</title>
+<meta name="description" content="Clojure library and CLI to search the OneGTMLab GTM tool directory offline">
+<style>body{font:16px/1.6 system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;color:#1b1f23}pre{background:#f6f8fa;padding:1rem;overflow:auto}code{background:#f6f8fa;padding:.1em .3em}table{border-collapse:collapse}td,th{border:1px solid #d0d7de;padding:.3rem .6rem}</style>
+</head><body>
+<main>
+<h1 dir="auto">gtm-tool-finder (Clojure)</h1>
+<p dir="auto">Search the <a href="https://www.onegtmlab.dev">OneGTMLab</a> GTM tool directory from Clojure or your terminal:</p>
+<ul dir="auto">
+<li>API reviews for 66 sales and marketing tools: pricing, rate limits, keys and MCP support</li>
+<li>99 head-to-head tool comparisons, such as Apollo vs Clay</li>
+<li>110 plain-English definitions of GTM terms</li>
+</ul>
+<div class="highlight highlight-source-clojure" dir="auto"><pre class="notranslate">[net.clojars.onegtmlab/gtm-tool-finder <span class="pl-s"><span class="pl-pds">"</span>1.0.2<span class="pl-pds">"</span></span>]</pre></div>
+<div class="highlight highlight-source-clojure" dir="auto"><pre class="notranslate">(<span class="pl-k">require</span> '[net.clojars.onegtmlab.gtm-tool-finder <span class="pl-c1">:as</span> f])
+
+(<span class="pl-en">doseq</span> [e (<span class="pl-en">f/search</span> <span class="pl-s"><span class="pl-pds">"</span>enrichment<span class="pl-pds">"</span></span> <span class="pl-c1">:kind</span> <span class="pl-s"><span class="pl-pds">"</span>Tool<span class="pl-pds">"</span></span> <span class="pl-c1">:limit</span> <span class="pl-c1">10</span>)]
+  (<span class="pl-en">println</span> (<span class="pl-c1">:name</span> e) (<span class="pl-c1">:url</span> e)))</pre></div>
+<p dir="auto">Command line: <code class="notranslate">clojure -M -m net.clojars.onegtmlab.gtm-tool-finder --kind Comparison clay</code>.</p>
+<p dir="auto">Every result links to the full page on <a href="https://www.onegtmlab.dev/tool-directory">onegtmlab.dev/tool-directory</a>. The list ships inside the jar, so it works offline and sends no data anywhere.</p>
+<p dir="auto">Also available as a <a href="https://pypi.org/project/gtm-tool-finder/">Python package</a>, a <a href="https://rubygems.org/gems/gtm-tool-finder">Ruby gem</a>, a <a href="https://central.sonatype.com/artifact/io.github.jaizendra-netizen/gtm-tool-finder">Java library</a>, an <a href="https://hex.pm/packages/gtm_tool_finder">Elixir package</a> and a <a href="https://hex.pm/packages/gtm_tool_directory">Gleam package</a>. Built by <a href="https://www.onegtmlab.dev">OneGTMLab</a>, a GTM engineering agency. MIT licensed.</p>
+</main>
+<footer><p>Source: <a href="https://github.com/jaizendra-netizen/gtm-tool-finder-clojure">github.com/jaizendra-netizen/gtm-tool-finder-clojure</a>. Maintained by <a href="https://www.onegtmlab.dev">OneGTMLab</a>.</p></footer>
+</body></html>
